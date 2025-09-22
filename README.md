@@ -1,4 +1,4 @@
-# 🛠️ Zero-Cost ETL Project Boilerplate = liberETL
+# 🛠️ Zero-Cost ETL Project Boilerplate = libreETL
 
 A **lightweight, zero-cost ETL project template** for learning and collaboration.  
 Built to help anyone practice ETL workflows using free tools, while maintaining  
