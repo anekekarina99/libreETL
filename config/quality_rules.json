@@ -1,0 +1,33 @@
+{
+    "completeness_threshold": 0.95,
+    "accuracy_threshold": 0.98,
+    "consistency_rules": {
+        "date_format": "YYYY-MM-DD",
+        "currency_format": "IDR",
+        "timestamp_format": "YYYY-MM-DD HH:MM:SS"
+    },
+    "table_specific_rules": {
+        "orders": {
+            "required_columns": ["order_id", "customer_id", "order_date", "amount"],
+            "unique_columns": ["order_id"],
+            "not_null_columns": ["order_id", "customer_id", "order_date"],
+            "value_ranges": {
+                "amount": {"min": 0, "max": 100000000},
+                "quantity": {"min": 1, "max": 1000}
+            },
+            "format_rules": {
+                "order_date": "date_format",
+                "customer_id": "alphanumeric"
+            }
+        },
+        "customers": {
+            "required_columns": ["customer_id", "customer_name", "email"],
+            "unique_columns": ["customer_id", "email"],
+            "not_null_columns": ["customer_id", "customer_name"],
+            "format_rules": {
+                "email": "email_format",
+                "phone": "phone_format"
+            }
+        }
+    }
+}
